@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rev.io Product AI Transformation - 10x Productivity Through AI Orchestration</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 0;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .slide {
+            padding: 40px 60px;
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .title-slide {
+            text-align: center;
+            padding: 100px 60px;
+            background: linear-gradient(to right, #0f2c4a 0%, #1D3756 100%);
+            color: white;
+        }
+        
+        .rev-title {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        
+        .rev-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 50px;
+            font-weight: 300;
+        }
+        
+        .rev-date {
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+        
+        .revio-blue {
+            color: #1D3756;
+        }
+        
+        .revio-teal {
+            color: #2499B6;
+        }
+        
+        .revio-green {
+            color: #6EBE4F;
+        }
+        
+        .bg-revio-blue {
+            background-color: #1b3a59;
+            color: white;
+        }
+        
+        .bg-revio-teal {
+            background-color: #20c9c3;
+            color: white;
+        }
+        
+        .header-block {
+            background-color: #1b3a59;
+            color: white;
+            padding: 15px 25px;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+        
+        .teal-box {
+            background-color: #20c9c3;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        
+        .key-points {
+            background-color: rgba(32, 201, 195, 0.1);
+            border-left: 4px solid #20c9c3;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            border: 1px solid rgba(29, 55, 86, 0.06);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(29, 55, 86, 0.1);
+            background-color: white;
+            height: 100%;
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            box-shadow: 0 6px 12px rgba(29, 55, 86, 0.15);
+        }
+        
+        .card-title {
+            font-weight: 600;
+            border-bottom: 3px solid #2499B6;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            color: #1D3756;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.3px;
+        }
+        
+        .pod-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(29, 55, 86, 0.12);
+            overflow: hidden;
+            margin-bottom: 30px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid rgba(29, 55, 86, 0.08);
+        }
+        
+        .pod-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(29, 55, 86, 0.18);
+        }
+        
+        .pod-header {
+            background: linear-gradient(135deg, #1D3756 0%, #2499B6 100%);
+            color: white;
+            padding: 18px 20px;
+            border-radius: 8px 8px 0 0;
+            font-weight: 600;
+            font-size: 1.15rem;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 2px 4px rgba(29, 55, 86, 0.15);
+            letter-spacing: 0.3px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .pod-header i {
+            margin-right: 10px;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        .pod-header.understaffed {
+            background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
+            position: relative;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 15px 20px;
+        }
+        
+        .pod-header.understaffed .team-name {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .pod-header.understaffed::after {
+            content: "⚠️ Needs Resources";
+            font-size: 0.75rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-top: 5px;
+            display: block;
+            width: 100%;
+            margin-left: 0;
+        }
+        
+        .pod-body {
+            padding: 24px;
+            border: 1px solid rgba(29, 55, 86, 0.08);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            background-color: #fafbfc;
+        }
+        
+        .timeline-container {
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #20c9c3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .timeline-content {
+            border-left: 2px solid #20c9c3;
+            padding-left: 20px;
+            padding-bottom: 20px;
+        }
+        
+        .metrics-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #f8f8f8, #ffffff);
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        
+        .metric-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #20c9c3;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .metric-label {
+            font-size: 1.1rem;
+            color: #1b3a59;
+            font-weight: 600;
+        }
+        
+        .org-chart {
+            margin: 50px auto;
+            text-align: center;
+        }
+        
+        .org-level {
+            margin-bottom: 30px;
+        }
+        
+        .org-box {
+            display: inline-block;
+            padding: 8px 12px;
+            margin: 0 5px 10px;
+            min-width: 120px;
+            background-color: white;
+            border: 2px solid #1b3a59;
+            border-radius: 6px;
+            position: relative;
+            vertical-align: top;
+        }
+        
+        .org-box-title {
+            font-weight: 600;
+            color: #1b3a59;
+            margin-bottom: 3px;
+            font-size: 0.75rem;
+            line-height: 1.2;
+        }
+        
+        .org-box-name {
+            font-style: italic;
+            font-size: 0.7rem;
+        }
+        
+        .org-box.executive {
+            background-color: #1b3a59;
+            color: white;
+            border-color: #1b3a59;
+        }
+        
+        .org-box.executive .org-box-title {
+            color: white;
+        }
+        
+        .org-box.vp {
+            background-color: #20c9c3;
+            color: white;
+            border-color: #20c9c3;
+        }
+        
+        .org-box.vp .org-box-title {
+            color: white;
+        }
+        
+        .org-connector {
+            width: 2px;
+            height: 20px;
+            background-color: #1b3a59;
+            margin: 0 auto 10px;
+        }
+        
+        .org-branch {
+            position: relative;
+            margin-bottom: 15px;
+        }
+        
+        .org-branch:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: calc(50% - 1px);
+            width: 2px;
+            height: 20px;
+            background-color: #1b3a59;
+        }
+        
+        .org-split {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .org-split:before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 25%;
+            right: 25%;
+            height: 2px;
+            background-color: #1b3a59;
+        }
+        
+        .org-split-item {
+            position: relative;
+        }
+        
+        .org-split-item:before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: calc(50% - 1px);
+            width: 2px;
+            height: 20px;
+            background-color: #1b3a59;
+        }
+        
+        .role-description {
+            background-color: rgba(27, 58, 89, 0.05);
+            border-left: 4px solid #1b3a59;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .pod-role {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .pod-role:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .pod-role-title {
+            font-weight: 600;
+            color: #1D3756;
+            margin-bottom: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .pod-role-name {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+        }
+        
+        .pod-accountabilities {
+            margin-top: 10px;
+        }
+        
+        .pod-accountabilities-title {
+            font-weight: 600;
+            color: #1D3756;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .accountability-item {
+            padding: 5px 0;
+            position: relative;
+            color: #555;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .page-break {
+            page-break-after: always;
+            height: 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        th, td {
+            padding: 10px 15px;
+            text-align: left;
+            border: 1px solid #eaeaea;
+        }
+        
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+        }
+        
+         {
+            body {
+                background-color: white;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+        }
+        
+        /* New Team Badge */
+        .new-team-badge {
+            display: inline-block;
+            background-color: #10b981;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.125rem 0.5rem;
+            border-radius: 9999px;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+        
+        /* New Accountability Item */
+        .accountability-item.new {
+            position: relative;
+        }
+        
+        .accountability-item.new::after {
+            content: "NEW";
+            display: inline-block;
+            margin-left: 0.5rem;
+            background-color: #3b82f6;
+            color: white;
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 0.1rem 0.25rem;
+            border-radius: 0.25rem;
+            line-height: 1;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Header with Logo -->
+    <div style="position: fixed; top: 0; left: 0; right: 0; background: rgba(29, 55, 86, 0.95); padding: 10px 40px; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <img src="https://www.rev.io/hs-fs/hubfs/Theme%2c%20Identity%2c%20Brand%2c%20Internal%202024/Rev.io%20Brand%20Resources/Rev.io%20Logos%20and%20Glyphs/logo-revio-white.png?width=150&height=39&name=logo-revio-white.png" 
+             alt="Rev.io Logo" 
+             style="height: 30px; width: auto;">
+    </div>
+    <div class="container" style="padding-top: 60px;">
+        <!-- Title Slide -->
+        <div class="slide title-slide">
+            <div style="position: relative; z-index: 1; padding-top: 40px;">
+                <div style="margin-bottom: 40px;">
+                    <h1 class="rev-title" style="font-size: 3.5rem; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">
+                        Rev.io Product AI Transformation
+                    </h1>
+                    <div style="height: 3px; width: 200px; background: linear-gradient(to right, #2499B6, #1D3756); margin: 0 auto 30px;"></div>
+                    <h2 style="font-size: 2.2rem; font-weight: 300; margin-bottom: 40px; color: #2499B6;">
+                        10x Productivity Through AI Orchestration
+                    </h2>
+                </div>
+                
+                <div class="teal-box" style="background: linear-gradient(135deg, #2499B6, #1D3756); box-shadow: 0 4px 15px rgba(36, 153, 182, 0.3); border-radius: 8px; padding: 25px 40px; display: inline-block;">
+                    <h3 class="rev-subtitle" style="font-size: 1.6rem; margin: 0; font-weight: 500;">
+                        From Linear Teams to Exponential Networks
+                    </h3>
+                </div>
+                
+                <div style="margin-top: 60px;">
+                    <p class="rev-date" style="font-size: 1.3rem; color: rgba(255,255,255,0.9);">
+                        <i class="far fa-calendar-alt" style="margin-right: 10px;"></i>August 2025
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+        
+<!-- Product Overview -->
+        <div class="slide">
+            <div class="header-block">
+                Product Organization Overview
+            </div>
+            
+            <div class="mb-8">
+                <p class="text-lg mb-6">
+                    The Product organization drives Rev.io's vision and execution through three integrated layers: Strategy, Innovation, and Implementation. This structure ensures clear ownership from customer insight to production deployment.
+                </p>
+            </div>
+            
+            <div class="org-chart" style="padding: 40px 0;">
+                <!-- COO Level -->
+                <div class="org-level">
+                    <div class="org-box executive" style="margin: 0 auto;">
+                        <div class="org-box-title">Chief Operating Officer</div>
+                    </div>
+                </div>
+                
+                <!-- Connecting line from COO -->
+                <div style="width: 2px; height: 30px; background-color: #1b3a59; margin: 0 auto;"></div>
+                
+                <!-- Horizontal line to connect to both VPs -->
+                <div style="position: relative; height: 2px; margin: 0 auto;">
+                    <div style="position: absolute; left: 50%; transform: translateX(-50%); width: 300px; height: 2px; background-color: #1b3a59;"></div>
+                    <!-- Vertical lines down to VPs -->
+                    <div style="position: absolute; left: 50%; transform: translateX(-150px); width: 2px; height: 20px; background-color: #1b3a59;"></div>
+                    <div style="position: absolute; left: 50%; transform: translateX(150px); width: 2px; height: 20px; background-color: #1b3a59;"></div>
+                </div>
+                
+                <!-- VP Level -->
+                <div style="display: flex; justify-content: center; gap: 200px; margin-top: 20px;">
+                    <!-- VP of Product Strategy Branch -->
+                    <div style="text-align: center;">
+                        <div class="org-box vp">
+                            <div class="org-box-title">VP of Product<br>Strategy</div>
+                        </div>
+                        <div style="width: 2px; height: 20px; background-color: #1b3a59; margin: 5px auto;"></div>
+                        
+                        <!-- Horizontal line to Directors -->
+                        <div style="position: relative; height: 2px;">
+                            <div style="position: absolute; left: 50%; transform: translateX(-50%); width: 200px; height: 2px; background-color: #1b3a59;"></div>
+                            <!-- Vertical lines down to Directors -->
+                            <div style="position: absolute; left: 50%; transform: translateX(-60px); width: 2px; height: 15px; background-color: #1b3a59;"></div>
+                            <div style="position: absolute; left: 50%; transform: translateX(60px); width: 2px; height: 15px; background-color: #1b3a59;"></div>
+                        </div>
+                        
+                        <!-- Directors Level -->
+                        <div style="display: flex; justify-content: center; gap: 20px; margin-top: 15px;">
+                            <div>
+                                <div class="org-box">
+                                    <div class="org-box-title">Director of<br>Product</div>
+                                </div>
+                                <div style="width: 2px; height: 15px; background-color: #1b3a59; margin: 5px auto;"></div>
+                                
+                                <!-- Horizontal line to Product Team -->
+                                <div style="position: relative; height: 2px;">
+                                    <div style="position: absolute; left: 50%; transform: translateX(-50%); width: 120px; height: 2px; background-color: #1b3a59;"></div>
+                                    <!-- Vertical lines to team members -->
+                                    <div style="position: absolute; left: 50%; transform: translateX(-35px); width: 2px; height: 10px; background-color: #1b3a59;"></div>
+                                    <div style="position: absolute; left: 50%; transform: translateX(35px); width: 2px; height: 10px; background-color: #1b3a59;"></div>
+                                </div>
+                                
+                                <div style="display: flex; justify-content: center; gap: 10px; margin-top: 10px;">
+                                    <div class="org-box" style="background-color: #f8f8f8;">
+                                        <div class="org-box-title">Product<br>Managers</div>
+                                    </div>
+                                    <div class="org-box" style="background-color: #f8f8f8;">
+                                        <div class="org-box-title">UI/UX Designers</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="org-box">
+                                    <div class="org-box-title">Director of<br>Knowledge<br>Management</div>
+                                </div>
+                                <div style="width: 2px; height: 15px; background-color: #1b3a59; margin: 5px auto;"></div>
+                                <div class="org-box" style="background-color: #f8f8f8;">
+                                    <div class="org-box-title">Documentation<br>Writer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- VP of Product Innovation Branch -->
+                    <div style="text-align: center;">
+                        <div class="org-box vp">
+                            <div class="org-box-title">VP of Product<br>Innovation</div>
+                        </div>
+                        <div style="width: 2px; height: 20px; background-color: #1b3a59; margin: 5px auto;"></div>
+                        <div class="org-box" style="background-color: #f8f8f8;">
+                            <div class="org-box-title">Prompt<br>Strategists</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Product Strategy Layer -->
+        <div class="slide">
+            <div class="header-block">
+                Product Strategy Layer
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="card">
+                    <h3 class="card-title">VP of Product Strategy</h3>
+                    <ul class="list-disc pl-6 space-y-1 text-sm">
+                        <li>Owns the "what" and "why" of the product</li>
+                        <li>Oversees Director of Knowledge Management and Product Management groups</li>
+                        <li>Defines customer journey and product-market fit</li>
+                        <li>Connects directly with strategic clients</li>
+                        <li>Defines product vision and strategic roadmap</li>
+                        <li>Routes features to appropriate functional areas</li>
+                        <li>Leads cross-functional feedback loops</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">Director of Product</h3>
+                    <ul class="list-disc pl-6 space-y-1 text-sm">
+                        <li>Keeps team aligned and cohesive</li>
+                        <li>Maintains product vision and strategy</li>
+                        <li>Creates high-level requirements for Product Managers</li>
+                        <li>Responsible for growth and progression of Product Managers and UI/UX team members</li>
+                        <li>Ensures consistent product execution</li>
+                        <li>Bridges strategy to pod implementation</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="card">
+                    <h3 class="card-title">UI/UX Designers</h3>
+                    <p class="italic mb-4">User Experience Team</p>
+                    <ul class="list-disc pl-6 space-y-1 text-sm">
+                        <li>Create Figma mockups and design documentation</li>
+                        <li>Participate in client focus groups</li>
+                        <li>Ensure designs meet end-user needs</li>
+                        <li>Support pod teams with implementation</li>
+                        <li>Maintain design-specific CLAUDE.md files for AI context</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">Director of Knowledge Management</h3>
+                    <p class="italic mb-4">Documentation & Training</p>
+                    <ul class="list-disc pl-6 space-y-1 text-sm">
+                        <li>Oversees all documentation and training initiatives</li>
+                        <li>Manages documentation writers</li>
+                        <li>Ensures help documentation quality and accuracy</li>
+                        <li>Coordinates training video production</li>
+                        <li>Maintains knowledge base and user guides</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="card">
+                    <h3 class="card-title">Product Manager</h3>
+                    <p class="italic mb-4">Product Strategy Team</p>
+                    <ul class="list-disc pl-6 space-y-1 text-sm">
+                        <li>Owns end-to-end customer journey for their product area</li>
+                        <li>Connects directly with customers and market to understand needs</li>
+                        <li>Creates product vision and PRFAQs for new initiatives</li>
+                        <li>Conducts customer discovery sessions and feedback loops</li>
+                        <li>Translates customer needs into product requirements</li>
+                        <li>Defines acceptance criteria and success metrics</li>
+                        <li>Manages product backlog prioritization based on customer value</li>
+                        <li>Conducts product approval through system demos and story validation</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">Documentation Writer</h3>
+                    <p class="italic mb-4">Knowledge & Training Team</p>
+                    <ul class="list-disc pl-6 space-y-1 text-sm">
+                        <li>Creates and maintains release notes</li>
+                        <li>Develops training documentation</li>
+                        <li>Produces walkthrough videos</li>
+                        <li>Designs in-app click through paths</li>
+                        <li>Ensures documentation consistency and clarity</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Product Innovation Layer -->
+        <div class="slide">
+            <div class="header-block">
+                Product Innovation Layer
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="card">
+                    <h3 class="card-title">VP of Product Innovation</h3>
+                    <ul class="list-disc pl-6 space-y-1 text-sm">
+                        <li>Owns AI agent tuning and optimization across all pods</li>
+                        <li>Evaluates and implements cutting-edge AI tools and platforms</li>
+                        <li>Develops training programs for prompt strategy excellence</li>
+                        <li>Establishes metrics and KPIs for pod productivity</li>
+                        <li>Creates best practices for AI orchestration workflows</li>
+                        <li>Ensures pods leverage latest AI capabilities effectively</li>
+                        <li>Tracks ROI and efficiency gains from AI implementation</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">Prompt Strategists</h3>
+                    <ul class="list-disc pl-6 space-y-1 text-sm">
+                        <li>Report to VP of Product Innovation for AI best practices</li>
+                        <li>Embedded in pods to drive rapid feature delivery</li>
+                        <li>Orchestrate AI agents to implement user stories</li>
+                        <li>Manage parallel AI sub-agents for complex features</li>
+                        <li>Validate and refine AI-generated solutions</li>
+                        <li>Deploy features directly to production</li>
+                        <li>Bridge product vision with AI execution capabilities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+<!-- Pod Structure -->
+        <div class="slide">
+            <div class="header-block">
+                The Three Pod Roles
+            </div>
+            
+            <div class="mb-8">
+                <p class="text-lg mb-6">
+                    Each pod consists of <strong>3 specialists</strong> working together as a self-sufficient team to deliver features from vision to production through AI orchestration.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="card">
+                    <h3 class="card-title">Product Manager</h3>
+                    <p class="text-xs text-gray-600 mb-3 italic">1 per pod (may serve multiple pods)</p>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-sm mb-2">Core Responsibility:</h4>
+                        <p class="text-sm">Define the "what" and "why" - translating customer needs into clear product vision and actionable stories</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-sm mb-2">Key Activities:</h4>
+                        <ul class="list-disc pl-5 text-sm space-y-1">
+                            <li>Customer discovery and feedback synthesis</li>
+                            <li>Feature definition with PRFAQs and acceptance criteria</li>
+                            <li>Story breakdown and prioritization</li>
+                            <li>Maintains product context in CLAUDE.md</li>
+                            <li>Final approval for production releases</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">Prompt Strategist</h3>
+                    <p class="text-xs text-gray-600 mb-3 italic">1 per pod</p>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-sm mb-2">Core Responsibility:</h4>
+                        <p class="text-sm">Execute the "how" - orchestrating AI agents to rapidly implement stories into production-ready features</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-sm mb-2">Key Activities:</h4>
+                        <ul class="list-disc pl-5 text-sm space-y-1">
+                            <li>Orchestrate AI agents to implement user stories</li>
+                            <li>Manage parallel AI sub-agents for complex features</li>
+                            <li>Validate and refine AI-generated solutions</li>
+                            <li>Rapid prototyping and iteration</li>
+                            <li>Deploy features to production</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card">
+                    <h3 class="card-title">Senior Engineer</h3>
+                    <p class="text-xs text-gray-600 mb-3 italic">1 per pod (may serve multiple pods)</p>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-sm mb-2">Core Responsibility:</h4>
+                        <p class="text-sm">Ensure the "quality" - maintaining technical excellence and code standards</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-sm mb-2">Key Activities:</h4>
+                        <ul class="list-disc pl-5 text-sm space-y-1">
+                            <li>Define and maintain code quality standards</li>
+                            <li>Technical architecture decisions</li>
+                            <li>Code review and mentorship</li>
+                            <li>Maintains technical context in CLAUDE.md</li>
+                            <li>Co-approval for production releases</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+            <div class="header-block">
+                Required Skills & Talent Strategy
+            </div>
+            
+            <div class="mb-8">
+                <p class="text-lg mb-6">
+                    To successfully staff our AI-powered pods, we need specific skill sets that combine traditional expertise with AI orchestration capabilities. This section defines the competencies required for each role to guide hiring, training, and internal talent assessment.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="card">
+                    <h3 class="card-title">Product Manager Required Skills</h3>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-sm mb-2">Core Competencies:</h4>
+                        <ul class="list-disc pl-5 text-sm space-y-1">
+                            <li>Expert in leading client discovery sessions to surface real-world needs</li>
+                            <li>Ability to translate customer insights into functional requirements</li>
+                            <li>Pattern recognition across multiple customer conversations</li>
+                            <li>Strategic thinking to align features with business objectives</li>
+                            <li>Ability to decompose features into clear, actionable user stories</li>
+                            <li>Expertise in writing acceptance criteria that guide implementation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-sm mb-2">Technical Skills:</h4>
+                        <ul class="list-disc pl-5 text-sm space-y-1">
+                            <li>Data-driven decision making with analytics proficiency</li>
+                            <li>Experience with product discovery methodologies and PRFAQs</li>
+                            <li>Understanding of AI capabilities to inform product decisions</li>
+                            <li>Proficiency with design tools (Figma) for mockup creation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-sm mb-2">Leadership Skills:</h4>
+                        <ul class="list-disc pl-5 text-sm space-y-1">
+                            <li>Strong communication skills for stakeholder management</li>
+                            <li>Ability to make decisive trade-offs under ambiguity</li>
+                            <li>Cross-functional collaboration expertise</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">Prompt Strategist Required Skills</h3>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-sm mb-2">AI Orchestration:</h4>
+                        <ul class="list-disc pl-5 text-sm space-y-1">
+                            <li>Expert-level prompt strategy and AI agent orchestration</li>
+                            <li>Ability to direct AI agents to implement features and stories effectively</li>
+                            <li>Experience managing multiple AI sub-agents for parallel execution</li>
+                            <li>Strong understanding of LLM capabilities and limitations</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-sm mb-2">Communication & Technical Skills:</h4>
+                        <ul class="list-disc pl-5 text-sm space-y-1">
+                            <li>Exceptional ability to translate requirements into clear AI prompts</li>
+                            <li>Strong communication skills to articulate complex asks to AI agents</li>
+                            <li>Proficiency in validating AI-generated code and solutions</li>
+                            <li>Rapid iteration skills with AI-driven development workflows</li>
+                            <li>Context curation expertise for optimizing AI agent performance</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-sm mb-2">Delivery Skills:</h4>
+                        <ul class="list-disc pl-5 text-sm space-y-1">
+                            <li>Quality assurance mindset with focus on production deployment</li>
+                            <li>DevOps understanding for rapid deployment cycles</li>
+                            <li>Ability to work autonomously with minimal supervision</li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+        
+        <!-- Product Manager Workflow -->
+        <div class="slide">
+            <div class="header-block">
+                Product Manager Workflow in AI-Accelerated Pods
+            </div>
+            
+            <div class="mb-8">
+                <p class="text-lg mb-6">
+                    Product Managers orchestrate continuous discovery and vision creation, ensuring every feature enhances the cohesive product story.
+                </p>
+            </div>
+            
+            <!-- Continuous Discovery & Feedback Loop -->
+            <div class="bg-blue-50 p-6 rounded-lg mb-8">
+                <h3 class="font-semibold text-lg mb-4 revio-blue text-center">🔄 Continuous Discovery & Feedback Loop</h3>
+                <div class="grid grid-cols-1 md:grid-cols-6 gap-3">
+                    <div class="text-center">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <i class="fas fa-users text-2xl text-revio-blue mb-2"></i>
+                            <h4 class="font-semibold text-sm mb-1">Discovery</h4>
+                            <p class="text-xs">Focus groups, interviews, The Community forum</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <i class="fas fa-lightbulb text-2xl text-revio-teal mb-2"></i>
+                            <h4 class="font-semibold text-sm mb-1">Vision Creation</h4>
+                            <p class="text-xs">Transform insights into product vision</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <i class="fas fa-file-alt text-2xl text-revio-blue mb-2"></i>
+                            <h4 class="font-semibold text-sm mb-1">PRFAQ Creation</h4>
+                            <p class="text-xs">Foundational docs for understanding</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <i class="fas fa-tasks text-2xl text-revio-blue mb-2"></i>
+                            <h4 class="font-semibold text-sm mb-1">Feature Breakdown</h4>
+                            <p class="text-xs">Epics, features, stories & Figma mockups</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white rounded-lg p-4 shadow-sm" style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe);">
+                            <i class="fas fa-users-cog text-2xl text-blue-600 mb-2"></i>
+                            <h4 class="font-semibold text-sm mb-1">Pod Execution</h4>
+                            <p class="text-xs"><strong>🤝 HANDOFF</strong><br>Pod team implements</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <i class="fas fa-check-circle text-2xl text-revio-teal mb-2"></i>
+                            <h4 class="font-semibold text-sm mb-1">Product Approval</h4>
+                            <p class="text-xs">System demo & cohesive story validation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Prompt Strategist Workflow -->
+        <div class="slide">
+            <div class="header-block">
+                Prompt Strategist Workflow in AI-Accelerated Pods
+            </div>
+            
+            <div class="mb-8">
+                <p class="text-lg mb-6">
+                    Prompt Strategists transform product requirements into working code through expert AI orchestration, delivering same-day feature implementations with production-ready quality.
+                </p>
+            </div>
+            
+            <!-- AI-Powered Implementation Cycle -->
+            <div class="bg-green-50 p-6 rounded-lg mb-8">
+                <h3 class="font-semibold text-lg mb-4 revio-blue text-center">⚡ AI-Powered Implementation Cycle</h3>
+                <div class="grid grid-cols-1 md:grid-cols-6 gap-3">
+                    <div class="text-center">
+                        <div class="bg-white rounded-lg p-4 shadow-sm" style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe);">
+                            <i class="fas fa-file-import text-2xl text-blue-600 mb-2"></i>
+                            <h4 class="font-semibold text-sm mb-1">Receive Requirements</h4>
+                            <p class="text-xs"><strong>🤝 HANDOFF</strong><br>Stories from PM</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <i class="fas fa-robot text-2xl text-revio-teal mb-2"></i>
+                            <h4 class="font-semibold text-sm mb-1">AI Orchestration</h4>
+                            <p class="text-xs">Direct multiple AI agents for implementation</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <i class="fas fa-code text-2xl text-revio-blue mb-2"></i>
+                            <h4 class="font-semibold text-sm mb-1">Rapid Development</h4>
+                            <p class="text-xs">Generate & validate code solutions</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <i class="fas fa-sync-alt text-2xl text-revio-blue mb-2"></i>
+                            <h4 class="font-semibold text-sm mb-1">Iterate & Refine</h4>
+                            <p class="text-xs">Rapid cycles with AI feedback</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <i class="fas fa-vial text-2xl text-revio-teal mb-2"></i>
+                            <h4 class="font-semibold text-sm mb-1">Test & Validate</h4>
+                            <p class="text-xs">Ensure quality & acceptance criteria</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white rounded-lg p-4 shadow-sm" style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe);">
+                            <i class="fas fa-code-branch text-2xl text-blue-600 mb-2"></i>
+                            <h4 class="font-semibold text-sm mb-1">Code Review & Deploy</h4>
+                            <p class="text-xs"><strong>🤝 HANDOFF</strong><br>Senior Engineer reviews PR</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
