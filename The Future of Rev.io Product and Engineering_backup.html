@@ -1,0 +1,2352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rev.io AI Transformation - 10x Productivity Through AI Orchestration</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 0;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .slide {
+            padding: 40px 60px;
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .title-slide {
+            text-align: center;
+            padding: 100px 60px;
+            background: linear-gradient(to right, #0f2c4a 0%, #1D3756 100%);
+            color: white;
+        }
+        
+        .rev-title {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        
+        .rev-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 50px;
+            font-weight: 300;
+        }
+        
+        .rev-date {
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+        
+        .revio-blue {
+            color: #1D3756;
+        }
+        
+        .revio-teal {
+            color: #2499B6;
+        }
+        
+        .revio-green {
+            color: #6EBE4F;
+        }
+        
+        .bg-revio-blue {
+            background-color: #1b3a59;
+            color: white;
+        }
+        
+        .bg-revio-teal {
+            background-color: #20c9c3;
+            color: white;
+        }
+        
+        .header-block {
+            background-color: #1b3a59;
+            color: white;
+            padding: 15px 25px;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+        
+        .teal-box {
+            background-color: #20c9c3;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        
+        .key-points {
+            background-color: rgba(32, 201, 195, 0.1);
+            border-left: 4px solid #20c9c3;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            border: 1px solid rgba(29, 55, 86, 0.06);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(29, 55, 86, 0.1);
+            background-color: white;
+            height: 100%;
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            box-shadow: 0 6px 12px rgba(29, 55, 86, 0.15);
+        }
+        
+        .card-title {
+            font-weight: 600;
+            border-bottom: 3px solid #2499B6;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            color: #1D3756;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.3px;
+        }
+        
+        .pod-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(29, 55, 86, 0.12);
+            overflow: hidden;
+            margin-bottom: 30px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid rgba(29, 55, 86, 0.08);
+        }
+        
+        .pod-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(29, 55, 86, 0.18);
+        }
+        
+        .pod-header {
+            background: linear-gradient(135deg, #1D3756 0%, #2499B6 100%);
+            color: white;
+            padding: 18px 20px;
+            border-radius: 8px 8px 0 0;
+            font-weight: 600;
+            font-size: 1.15rem;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 2px 4px rgba(29, 55, 86, 0.15);
+            letter-spacing: 0.3px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .pod-header i {
+            margin-right: 10px;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        .pod-header.understaffed {
+            background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
+            position: relative;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 15px 20px;
+        }
+        
+        .pod-header.understaffed .team-name {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .pod-header.understaffed::after {
+            content: "⚠️ Needs Resources";
+            font-size: 0.75rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-top: 5px;
+            display: block;
+            width: 100%;
+            margin-left: 0;
+        }
+        
+        .pod-body {
+            padding: 24px;
+            border: 1px solid rgba(29, 55, 86, 0.08);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            background-color: #fafbfc;
+        }
+        
+        .timeline-container {
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #20c9c3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .timeline-content {
+            border-left: 2px solid #20c9c3;
+            padding-left: 20px;
+            padding-bottom: 20px;
+        }
+        
+        .metrics-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #f8f8f8, #ffffff);
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        
+        .metric-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #20c9c3;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .metric-label {
+            font-size: 1.1rem;
+            color: #1b3a59;
+            font-weight: 600;
+        }
+        
+        .org-chart {
+            margin: 50px auto;
+            text-align: center;
+        }
+        
+        .org-level {
+            margin-bottom: 30px;
+        }
+        
+        .org-box {
+            display: inline-block;
+            padding: 8px 12px;
+            margin: 0 5px 10px;
+            min-width: 120px;
+            background-color: white;
+            border: 2px solid #1b3a59;
+            border-radius: 6px;
+            position: relative;
+            vertical-align: top;
+        }
+        
+        .org-box-title {
+            font-weight: 600;
+            color: #1b3a59;
+            margin-bottom: 3px;
+            font-size: 0.75rem;
+            line-height: 1.2;
+        }
+        
+        .org-box-name {
+            font-style: italic;
+            font-size: 0.7rem;
+        }
+        
+        .org-box.executive {
+            background-color: #1b3a59;
+            color: white;
+            border-color: #1b3a59;
+        }
+        
+        .org-box.executive .org-box-title {
+            color: white;
+        }
+        
+        .org-box.vp {
+            background-color: #20c9c3;
+            color: white;
+            border-color: #20c9c3;
+        }
+        
+        .org-box.vp .org-box-title {
+            color: white;
+        }
+        
+        .org-connector {
+            width: 2px;
+            height: 20px;
+            background-color: #1b3a59;
+            margin: 0 auto 10px;
+        }
+        
+        .org-branch {
+            position: relative;
+            margin-bottom: 15px;
+        }
+        
+        .org-branch:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: calc(50% - 1px);
+            width: 2px;
+            height: 20px;
+            background-color: #1b3a59;
+        }
+        
+        .org-split {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .org-split:before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 25%;
+            right: 25%;
+            height: 2px;
+            background-color: #1b3a59;
+        }
+        
+        .org-split-item {
+            position: relative;
+        }
+        
+        .org-split-item:before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: calc(50% - 1px);
+            width: 2px;
+            height: 20px;
+            background-color: #1b3a59;
+        }
+        
+        .role-description {
+            background-color: rgba(27, 58, 89, 0.05);
+            border-left: 4px solid #1b3a59;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .pod-role {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .pod-role:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .pod-role-title {
+            font-weight: 600;
+            color: #1D3756;
+            margin-bottom: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .pod-role-name {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+        }
+        
+        .pod-accountabilities {
+            margin-top: 10px;
+        }
+        
+        .pod-accountabilities-title {
+            font-weight: 600;
+            color: #1D3756;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .accountability-item {
+            padding: 5px 0;
+            position: relative;
+            color: #555;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .page-break {
+            page-break-after: always;
+            height: 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        th, td {
+            padding: 10px 15px;
+            text-align: left;
+            border: 1px solid #eaeaea;
+        }
+        
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+        }
+        
+         {
+            body {
+                background-color: white;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+        }
+        
+        /* New Team Badge */
+        .new-team-badge {
+            display: inline-block;
+            background-color: #10b981;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.125rem 0.5rem;
+            border-radius: 9999px;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+        
+        /* New Accountability Item */
+        .accountability-item.new {
+            position: relative;
+        }
+        
+        .accountability-item.new::after {
+            content: "NEW";
+            display: inline-block;
+            margin-left: 0.5rem;
+            background-color: #3b82f6;
+            color: white;
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 0.1rem 0.25rem;
+            border-radius: 0.25rem;
+            line-height: 1;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Header with Logo -->
+    <div style="position: fixed; top: 0; left: 0; right: 0; background: rgba(29, 55, 86, 0.95); padding: 10px 40px; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <img src="https://www.rev.io/hs-fs/hubfs/Theme%2c%20Identity%2c%20Brand%2c%20Internal%202024/Rev.io%20Brand%20Resources/Rev.io%20Logos%20and%20Glyphs/logo-revio-white.png?width=150&height=39&name=logo-revio-white.png" 
+             alt="Rev.io Logo" 
+             style="height: 30px; width: auto;">
+    </div>
+    <div class="container" style="padding-top: 60px;">
+        <!-- Title Slide -->
+        <div class="slide title-slide">
+            <div style="position: relative; z-index: 1; padding-top: 40px;">
+                <div style="margin-bottom: 40px;">
+                    <h1 class="rev-title" style="font-size: 3.5rem; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">
+                        Rev.io AI Transformation
+                    </h1>
+                    <div style="height: 3px; width: 200px; background: linear-gradient(to right, #2499B6, #1D3756); margin: 0 auto 30px;"></div>
+                    <h2 style="font-size: 2.2rem; font-weight: 300; margin-bottom: 40px; color: #2499B6;">
+                        10x Productivity Through AI Orchestration
+                    </h2>
+                </div>
+                
+                <div class="teal-box" style="background: linear-gradient(135deg, #2499B6, #1D3756); box-shadow: 0 4px 15px rgba(36, 153, 182, 0.3); border-radius: 8px; padding: 25px 40px; display: inline-block;">
+                    <h3 class="rev-subtitle" style="font-size: 1.6rem; margin: 0; font-weight: 500;">
+                        From Linear Teams to Exponential Networks
+                    </h3>
+                </div>
+                
+                <div style="margin-top: 60px;">
+                    <p class="rev-date" style="font-size: 1.3rem; color: rgba(255,255,255,0.9);">
+                        <i class="far fa-calendar-alt" style="margin-right: 10px;"></i>July 2025
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Executive Summary -->
+        <div class="slide">
+            <div class="header-block">
+                Executive Summary
+            </div>
+            <p class="text-lg mb-6">
+                Rev.io is embarking on a transformative journey to achieve 10x productivity gains through AI orchestration. 
+                This strategic shift positions our engineers as AI orchestrators who command autonomous agent networks, 
+                fundamentally changing how we deliver value to customers. By 2026, we will operate at a scale and speed 
+                that redefines competitive advantage in our market.
+            </p>
+            
+            <div class="key-points">
+                <h3 class="text-xl font-semibold mb-4 revio-blue">Strategic Benefits</h3>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Market Leadership:</strong> Deliver features in hours while competitors take weeks</li>
+                    <li><strong>Cost Efficiency:</strong> 10x productivity without proportional headcount increase</li>
+                    <li><strong>Customer Satisfaction:</strong> Same-day response to customer requests</li>
+                    <li><strong>Competitive Moat:</strong> AI capabilities that competitors cannot easily replicate</li>
+                </ul>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card">
+                    <h3 class="card-title">Core Philosophy</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Engineers as Orchestrators</strong>: Primary role is deploying and conducting agent networks</li>
+                        <li><strong>Exponential Pod Architecture</strong>: 4 orchestrators commanding unlimited agent hierarchies</li>
+                        <li><strong>Autonomous Feature Delivery</strong>: Agents independently complete complex tasks</li>
+                        <li><strong>Knowledge Network Effects</strong>: Domain expertise scales through agent collaboration</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">Transformation Impact</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Market Disruption</strong>: Feature delivery measured in hours, not sprints</li>
+                        <li><strong>Autonomous Quality</strong>: Self-correcting agent networks ensure excellence</li>
+                        <li><strong>Infinite Scalability</strong>: Output limited only by orchestration sophistication</li>
+                        <li><strong>Competitive Moat</strong>: Years ahead of traditional development approaches</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Organizational Structure -->
+        <div class="slide">
+            <div class="header-block">
+                Organizational Structure
+            </div>
+            
+            <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+                <!-- Evan's Organization -->
+                <div style="flex: 1; text-align: center; padding: 0 10px;">
+                    <!-- COO -->
+                    <div class="org-box executive" style="margin: 0 auto 10px;">
+                        <div class="org-box-title">Chief Operating Officer</div>
+                    </div>
+                    
+                    <!-- Connecting line -->
+                    <div style="width: 2px; height: 15px; background-color: #1b3a59; margin: 0 auto;"></div>
+                    
+                    <!-- VP Level under Evan -->
+                    <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 10px;">
+                        <div>
+                            <div class="org-box vp">
+                                <div class="org-box-title">VP of Product<br>Strategy</div>
+                            </div>
+                            <div style="width: 2px; height: 10px; background-color: #1b3a59; margin: 5px auto;"></div>
+                            <div class="org-box">
+                                <div class="org-box-title">Director of Product</div>
+                            </div>
+                            <div style="width: 2px; height: 10px; background-color: #1b3a59; margin: 5px auto;"></div>
+                            <div class="org-box" style="background-color: #f8f8f8;">
+                                <div class="org-box-title">Product Managers<br>& UI/UX Designers</div>
+                            </div>
+                            <div style="width: 2px; height: 10px; background-color: #1b3a59; margin: 5px auto;"></div>
+                            <div class="org-box" style="background-color: #f8f8f8;">
+                                <div class="org-box-title">Knowledge Team</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Jason's Organization -->
+                <div style="flex: 1; text-align: center; padding: 0 10px;">
+                    <!-- CTO -->
+                    <div class="org-box executive" style="margin: 0 auto 10px;">
+                        <div class="org-box-title">Chief Technology Officer</div>
+                    </div>
+                    
+                    <!-- Connecting line -->
+                    <div style="width: 2px; height: 15px; background-color: #1b3a59; margin: 0 auto;"></div>
+                    
+                    <!-- VP Level under Jason -->
+                    <div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 10px;">
+                        <div>
+                            <div class="org-box vp">
+                                <div class="org-box-title">VP of AI<br>and Analytics</div>
+                            </div>
+                            <div style="width: 2px; height: 10px; background-color: #1b3a59; margin: 5px auto;"></div>
+                            <div class="org-box">
+                                <div class="org-box-title">Engineering<br>Managers</div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="org-box vp">
+                                <div class="org-box-title">VP of AI<br>Engineering</div>
+                            </div>
+                            <div style="width: 2px; height: 10px; background-color: #1b3a59; margin: 5px auto;"></div>
+                            <div class="org-box">
+                                <div class="org-box-title">Engineering<br>Managers</div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="org-box vp">
+                                <div class="org-box-title">VP of Cloud<br>& Infrastructure</div>
+                            </div>
+                            <div style="width: 2px; height: 10px; background-color: #1b3a59; margin: 5px auto;"></div>
+                            <div class="org-box">
+                                <div class="org-box-title">Engineering<br>Managers</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Engineering team members -->
+                    <div style="margin-top: 15px;">
+                        <div style="width: 200px; height: 2px; background-color: #1b3a59; margin: 0 auto 10px;"></div>
+                        <div style="display: flex; justify-content: center; gap: 20px;">
+                            <div class="org-box" style="background-color: #f8f8f8;">
+                                <div class="org-box-title">AI<br>Engineering Leads</div>
+                            </div>
+                            <div class="org-box" style="background-color: #f8f8f8;">
+                                <div class="org-box-title">AI Software<br>Engineers</div>
+                            </div>
+                        </div>
+                        <p style="font-style: italic; color: #666; margin-top: 5px; font-size: 0.75rem;">Both report to Engineering Managers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Product Strategy Layer -->
+        <div class="slide">
+            <div class="header-block">
+                Product Strategy Layer
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="card">
+                    <h3 class="card-title">VP of Product Strategy</h3>
+                    <ul class="list-disc pl-6 space-y-1 text-sm">
+                        <li>Owns the "why" of the product</li>
+                        <li>Defines customer journey and product-market fit</li>
+                        <li>Drives customer-focused product strategy</li>
+                        <li>Leads cross-functional feedback loops</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">Director of Product</h3>
+                    <ul class="list-disc pl-6 space-y-1 text-sm">
+                        <li>Keeps team aligned and cohesive</li>
+                        <li>Maintains product vision and strategy</li>
+                        <li>Oversees Product Managers and UI/UX</li>
+                        <li>Provides strategic guidance</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">Product Managers</h3>
+                    <p class="italic mb-4">Above Pod Structure</p>
+                    <ul class="list-disc pl-6 space-y-1 text-sm">
+                        <li>Connect directly with clients</li>
+                        <li>Define product requirements and roadmap</li>
+                        <li>Route features to pods</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="card">
+                    <h3 class="card-title">UI/UX Designers</h3>
+                    <p class="italic mb-4">User Experience Team</p>
+                    <ul class="list-disc pl-6 space-y-1 text-sm">
+                        <li>Create Figma mockups and design documentation</li>
+                        <li>Participate in client focus groups</li>
+                        <li>Ensure designs meet end-user needs</li>
+                        <li>Support pod teams with implementation</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">Knowledge Team</h3>
+                    <p class="italic mb-4">Documentation & Training</p>
+                    <ul class="list-disc pl-6 space-y-1 text-sm">
+                        <li>Create and maintain help documentation</li>
+                        <li>Produce training videos and tutorials</li>
+                        <li>Develop user guides and knowledge base</li>
+                        <li>Ensure documentation accuracy</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="font-semibold text-lg mb-4 revio-blue">Product Strategy Workflow</h3>
+                <div class="flex flex-wrap items-center justify-center text-center">
+                    <div class="w-full md:w-1/3 px-4 mb-6 md:mb-0">
+                        <div class="bg-white rounded-lg p-4 shadow">
+                            <div class="text-3xl text-revio-blue mb-2">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4 class="font-semibold mb-2">Client Engagement</h4>
+                            <p class="text-sm">Product Managers & UI/UX connect with clients via focus groups & events</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hidden md:block text-2xl text-gray-400 self-center px-2">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    
+                    <div class="w-full md:w-1/3 px-4 mb-6 md:mb-0">
+                        <div class="bg-white rounded-lg p-4 shadow">
+                            <div class="text-3xl text-revio-teal mb-2">
+                                <i class="fas fa-pencil-ruler"></i>
+                            </div>
+                            <h4 class="font-semibold mb-2">Design & Documentation</h4>
+                            <p class="text-sm">UI/UX creates designs & requirements are defined</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hidden md:block text-2xl text-gray-400 self-center px-2">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    
+                    <div class="w-full md:w-1/3 px-4">
+                        <div class="bg-white rounded-lg p-4 shadow">
+                            <div class="text-3xl text-revio-blue mb-2">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <h4 class="font-semibold mb-2">Feature Assignment</h4>
+                            <p class="text-sm">Features assigned to pods based on domain expertise</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Engineering Leadership Layer -->
+        <div class="slide">
+            <div class="header-block">
+                Engineering Leadership Layer
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="card">
+                    <h3 class="card-title">VP of AI and Analytics</h3>
+                    <ul class="list-disc pl-6 space-y-1 text-sm">
+                        <li>Creates custom AI agents and systems</li>
+                        <li>Develops AI capabilities for Rev.io</li>
+                        <li>Builds proprietary AI solutions</li>
+                        <li>Implements ML models and pipelines</li>
+                        <li>Innovates AI-powered features</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">VP of AI Engineering</h3>
+                    <ul class="list-disc pl-6 space-y-1 text-sm">
+                        <li>Owns the AI transformation process</li>
+                        <li>Selects and implements AI tooling</li>
+                        <li>Designs training programs for AI development</li>
+                        <li>Tracks metrics and transformation progress</li>
+                        <li>Leads the Transition Team</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-6 mb-8">
+                <div class="card">
+                    <h3 class="card-title">Engineering Managers</h3>
+                    <p class="italic mb-4 text-gray-600">Darin Hansen, Bill Shuck, Chris Buss, Kevin Hall, Jessica Aguiar, Brenda Harvey</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-2 text-sm uppercase text-gray-600">People Leadership Focus</h4>
+                            <ul class="list-disc pl-6 space-y-1 text-sm">
+                                <li>Career development and mentorship</li>
+                                <li>Performance reviews and feedback</li>
+                                <li>Cross-pod coordination</li>
+                                <li>Engineering standards and best practices</li>
+                                <li>Team health and morale</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2 text-sm uppercase text-gray-600">AI Transformation Support</h4>
+                            <ul class="list-disc pl-6 space-y-1 text-sm">
+                                <li>Guide engineers through AI transition</li>
+                                <li>Support skill development initiatives</li>
+                                <li>Address transformation challenges</li>
+                                <li>Celebrate learning milestones</li>
+                                <li>Ensure psychological safety</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="font-semibold text-lg mb-4 revio-blue">Engineering Leadership Collaboration Model</h3>
+                <div class="flex flex-wrap items-center justify-center text-center gap-4">
+                    <div class="w-full md:w-auto px-4 mb-6 md:mb-0">
+                        <div class="bg-white rounded-lg p-4 shadow" style="min-width: 200px;">
+                            <div class="text-3xl text-revio-blue mb-2">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h4 class="font-semibold mb-2">AI Creation</h4>
+                            <p class="text-sm">VP of AI & Analytics builds custom agents and systems</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hidden md:block text-2xl text-gray-400 self-center">
+                        <i class="fas fa-arrows-alt-h"></i>
+                    </div>
+                    
+                    <div class="w-full md:w-auto px-4 mb-6 md:mb-0">
+                        <div class="bg-white rounded-lg p-4 shadow" style="min-width: 200px;">
+                            <div class="text-3xl text-revio-teal mb-2">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h4 class="font-semibold mb-2">Implementation</h4>
+                            <p class="text-sm">VP of AI Engineering enables teams with tools and training</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hidden md:block text-2xl text-gray-400 self-center">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    
+                    <div class="w-full md:w-auto px-4">
+                        <div class="bg-white rounded-lg p-4 shadow" style="min-width: 200px;">
+                            <div class="text-3xl text-revio-blue mb-2">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h4 class="font-semibold mb-2">Transformation</h4>
+                            <p class="text-sm">Engineering teams achieve exponential productivity</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pod Structure -->
+        <div class="slide">
+            <div class="header-block">
+                The Pod Structure: 3-Person Autonomous Units
+            </div>
+            
+            <div class="mb-8">
+                <p class="text-lg mb-6">
+                    Each pod operates as a <strong>Lean Agent Orchestra</strong> - three master orchestrators commanding comprehensive agent networks that span product, engineering, quality, and operations domains.
+                </p>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg mb-8">
+                <h3 class="font-semibold text-lg mb-4 revio-blue">Pod Agent Distribution</h3>
+                <p class="italic mb-4">Every Pod Member Gets Full Agent Access</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>All pod members receive comprehensive agent networks spanning product and engineering</li>
+                    <li>Product-focused agents translate requirements and validate acceptance criteria</li>
+                    <li>Engineering agents handle implementation, testing, and deployment</li>
+                    <li>Quality assurance agents ensure standards across all deliverables</li>
+                    <li>DevOps agents manage infrastructure and continuous deployment</li>
+                    <li>No role silos - every orchestrator commands the full spectrum of capabilities</li>
+                </ul>
+                <div class="mt-4 p-3 bg-white rounded">
+                    <p class="text-sm">
+                        <strong>Key Innovation:</strong> By giving everyone access to all agent types, we eliminate 
+                        handoffs and dependencies. Each pod member can take a feature from concept to production autonomously.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="role-description">
+                    <h3 class="font-semibold text-xl mb-4 revio-blue">AI Engineering Lead</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Primary Role</strong>: Chief orchestrator and technical architect</li>
+                        <li>Designs the overall agent strategy for the team's domain</li>
+                        <li>Orchestrates cross-functional agent networks spanning product and engineering</li>
+                        <li>Final technical authority for production deployments</li>
+                        <li>Mentors engineers in advanced orchestration techniques</li>
+                        <li>Architects meta-agents that coordinate other agent networks</li>
+                        <li>Ensures team delivers exponential value through sophisticated orchestration</li>
+                    </ul>
+                </div>
+                
+                <div class="role-description">
+                    <h3 class="font-semibold text-xl mb-4 revio-blue">AI Software Engineers (2)</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Primary Identity</strong>: Builders of autonomous agent platforms</li>
+                        <li>Architect and deploy self-organizing agent ecosystems</li>
+                        <li>Design meta-orchestration systems where agents manage other agents</li>
+                        <li>Build autonomous value chains from requirements to production</li>
+                        <li>Create self-evolving agent networks that improve with each iteration</li>
+                        <li>Master the art of prompt engineering at massive scale</li>
+                        <li>Develop agent hierarchies that handle edge cases autonomously</li>
+                        <li>Transform business problems into orchestrated agent solutions</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bg-blue-50 p-6 rounded-lg mb-8">
+                <h3 class="font-semibold text-lg mb-4 revio-blue">Why No Product Managers in Pods?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold mb-2">Traditional Model Limitations</h4>
+                        <ul class="list-disc pl-6 space-y-1 text-sm">
+                            <li>Product managers become bottlenecks in fast-moving AI development</li>
+                            <li>Handoffs between product and engineering slow velocity</li>
+                            <li>Separate product ownership creates artificial boundaries</li>
+                            <li>Traditional requirements gathering can't keep pace with AI capabilities</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2">AI-Enabled Pod Advantages</h4>
+                        <ul class="list-disc pl-6 space-y-1 text-sm">
+                            <li>AI agents handle requirements analysis and user story creation</li>
+                            <li>Product Managers work above pods, setting strategic direction</li>
+                            <li>AI ensures consistent product vision across all implementations</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 bg-white rounded">
+                    <p class="text-sm text-center">
+                        <strong>Key Innovation:</strong> Product Managers focus on strategic vision and customer relationships, 
+                        while AI agents handle tactical product decisions within pods, enabling 10x faster execution.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 p-8 rounded-lg mb-8 max-w-6xl mx-auto">
+                <h3 class="font-semibold text-2xl mb-6 text-center revio-blue">The Power of Three: Exponential Value Creation</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="bg-white rounded-lg p-6 shadow-lg">
+                            <div class="text-5xl font-bold text-revio-blue mb-2">3</div>
+                            <div class="text-lg font-semibold mb-2">Master Orchestrators</div>
+                            <p class="text-sm text-gray-600">Each pod member is a full-stack orchestrator commanding unlimited AI agents</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-white rounded-lg p-6 shadow-lg">
+                            <div class="text-5xl font-bold text-revio-teal mb-2">&gt;</div>
+                            <div class="text-lg font-semibold mb-2">Outperforms</div>
+                            <p class="text-sm text-gray-600">Traditional 10-person teams through unified agent networks</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-white rounded-lg p-6 shadow-lg">
+                            <div class="text-5xl font-bold text-revio-blue mb-2">∞</div>
+                            <div class="text-lg font-semibold mb-2">Unlimited Scale</div>
+                            <p class="text-sm text-gray-600">No handoffs, no silos - pure autonomous execution</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <p class="text-lg text-gray-700">
+                        <strong>Key Innovation:</strong> Every orchestrator commands comprehensive agent networks spanning product strategy, engineering, quality assurance, and operations - eliminating traditional role boundaries.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-gray-50 p-6 rounded-lg">
+                <h3 class="font-semibold text-xl mb-4 revio-blue">Autonomous Deployment Authority</h3>
+                <p class="mb-4">
+                    Each 3-person pod has complete autonomy to deploy. No external gates, no waiting, pure execution:
+                </p>
+                <div class="flex flex-wrap items-center justify-center text-center">
+                    <div class="w-full md:w-1/3 px-4 mb-6 md:mb-0">
+                        <div class="bg-white rounded-lg p-4 shadow">
+                            <div class="text-3xl text-revio-blue mb-2">
+                                <i class="fas fa-code-branch"></i>
+                            </div>
+                            <h4 class="font-semibold mb-2">Technical Validation</h4>
+                            <p class="text-sm">Agent networks verify code quality, security, and performance</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hidden md:block text-2xl text-gray-400">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    
+                    <div class="w-full md:w-1/3 px-4 mb-6 md:mb-0">
+                        <div class="bg-white rounded-lg p-4 shadow">
+                            <div class="text-3xl text-revio-teal mb-2">
+                                <i class="fas fa-check-double"></i>
+                            </div>
+                            <h4 class="font-semibold mb-2">Acceptance Validation</h4>
+                            <p class="text-sm">Product agents confirm all requirements are met</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hidden md:block text-2xl text-gray-400">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    
+                    <div class="w-full md:w-1/3 px-4">
+                        <div class="bg-white rounded-lg p-4 shadow">
+                            <div class="text-3xl text-revio-blue mb-2">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h4 class="font-semibold mb-2">Deploy & Monitor</h4>
+                            <p class="text-sm">Autonomous deployment with self-healing capabilities</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 text-center text-sm text-gray-600">
+                    <p><strong>AI Engineering Lead has final authority, but agents handle 99% autonomously</strong></p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Agent Architecture -->
+        <div class="slide">
+            <div class="header-block">
+                Agent Architecture: The Orchestration Engine
+            </div>
+            
+            <div class="mb-8">
+                <p class="text-lg mb-6">
+                    Our agent ecosystem transforms development from sequential handoffs to parallel symphonies. 
+                    Each team member commands specialized AI agents, achieving 
+                    unprecedented speed through concurrent execution.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="card">
+                    <h3 class="card-title">AI Agent Capabilities</h3>
+                    <p class="italic mb-3 text-sm">Comprehensive agent network available to every pod member</p>
+                    <ul class="list-disc pl-6 space-y-1 text-sm">
+                        <li><strong>Product Strategy</strong>: Market analysis and requirements definition</li>
+                        <li><strong>User Experience</strong>: Design system compliance and user journey optimization</li>
+                        <li><strong>Development</strong>: Full-stack implementation and architecture</li>
+                        <li><strong>Quality Assurance</strong>: Automated testing and validation</li>
+                        <li><strong>Operations</strong>: Deployment and infrastructure management</li>
+                        <li><strong>Analytics</strong>: Performance monitoring and insights</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">Accelerated Delivery Model</h3>
+                    <p class="italic mb-3 text-sm">Parallel execution eliminates traditional bottlenecks</p>
+                    <ul class="list-disc pl-6 space-y-1 text-sm">
+                        <li><strong>Simultaneous Discovery</strong>: Multiple agents analyze requirements in parallel</li>
+                        <li><strong>Rapid Prototyping</strong>: Design and development happen concurrently</li>
+                        <li><strong>Continuous Validation</strong>: Quality checks integrated throughout</li>
+                        <li><strong>Automated Deployment</strong>: Zero-friction release process</li>
+                    </ul>
+                    <div class="mt-3 p-3 bg-gray-50 rounded">
+                        <p class="text-sm"><strong>Result:</strong> Features delivered in hours, not weeks</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg mb-8">
+                <h3 class="font-semibold text-lg mb-4 revio-blue">Delivery Velocity Transformation</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-lg p-6 shadow text-center">
+                        <div class="text-3xl text-revio-blue mb-3">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg mb-2">10x Speed Increase</h4>
+                        <p class="text-sm text-gray-600 mb-3">Features delivered in minutes and hours, not days and weeks</p>
+                        <div class="text-2xl font-bold text-revio-teal">85%</div>
+                        <div class="text-sm text-gray-600">Average time reduction</div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 shadow text-center">
+                        <div class="text-3xl text-revio-teal mb-3">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg mb-2">Unlimited Capacity</h4>
+                        <p class="text-sm text-gray-600 mb-3">AI agents scale infinitely without hiring constraints</p>
+                        <div class="text-2xl font-bold text-revio-blue">∞</div>
+                        <div class="text-sm text-gray-600">Parallel workflows</div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 shadow text-center">
+                        <div class="text-3xl text-revio-blue mb-3">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg mb-2">Same-Day Shipping</h4>
+                        <p class="text-sm text-gray-600 mb-3">From concept to production in a single day</p>
+                        <div class="text-2xl font-bold text-revio-teal">24hr</div>
+                        <div class="text-sm text-gray-600">Feature lifecycle</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-revio-blue text-white p-4 rounded-lg">
+                    <h4 class="font-semibold mb-3">Parallel Execution Example</h4>
+                    <div class="text-sm space-y-2">
+                        <div class="flex items-start">
+                            <span class="font-mono mr-2">T+0:</span>
+                            <span>Discovery + Implementation agents start simultaneously</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="font-mono mr-2">T+2:</span>
+                            <span>Pattern found → Implementation adapts in real-time</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="font-mono mr-2">T+4:</span>
+                            <span>Code 80% done → Quality + Testing prepare</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="font-mono mr-2">T+6:</span>
+                            <span>All agents synchronize → Feature complete</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-revio-teal text-white p-4 rounded-lg">
+                    <h4 class="font-semibold mb-3">The Orchestration Advantage</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-sm">
+                        <li>No idle time - agents work concurrently</li>
+                        <li>80% overlap between sequential phases</li>
+                        <li>Instant handoffs with streaming context</li>
+                        <li>Automated quality gates at every stage</li>
+                        <li>Visible testing ensures confidence</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-6 bg-white p-6 rounded-lg shadow-lg">
+                <h4 class="font-semibold text-lg mb-4 text-center">Real Business Impact Example</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="text-center">
+                        <div class="text-3xl text-revio-blue mb-2">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <h5 class="font-semibold mb-2">Traditional Development</h5>
+                        <p class="text-2xl font-bold text-gray-700 mb-1">3-4 Weeks</p>
+                        <p class="text-sm text-gray-600">Requirements → Design → Development → QA → Deploy</p>
+                        <p class="text-sm text-gray-500 mt-2">Customer request to production</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl text-revio-teal mb-2">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h5 class="font-semibold mb-2">AI-Orchestrated Delivery</h5>
+                        <p class="text-2xl font-bold text-revio-teal mb-1">Same Day</p>
+                        <p class="text-sm text-gray-600">Customer call → AI implementation → Live in production</p>
+                        <p class="text-sm text-gray-500 mt-2">Competitive advantage realized immediately</p>
+                    </div>
+                </div>
+                <div class="mt-4 text-center">
+                    <p class="text-sm italic text-gray-700">
+                        "We can now respond to customer needs faster than competitors can schedule a meeting."
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Domain Knowledge Model -->
+        <div class="slide">
+            <div class="header-block">
+                Domain Knowledge Model
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-4 revio-blue">Domain Orchestration Model</h3>
+                <p class="mb-4">
+                    Each pod becomes the master orchestrator for specific domains, deploying specialized agent networks that 
+                    continuously expand their knowledge base. Domain expertise multiplies exponentially as agents learn, share, 
+                    and spawn specialized sub-agents for increasingly complex tasks.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-lg mb-4 revio-blue">Domain Specialization Benefits</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Deeper Expertise</strong>: Teams become increasingly proficient in their domains</li>
+                        <li><strong>Faster Development</strong>: Less context-switching between unrelated features</li>
+                        <li><strong>Higher Quality</strong>: Intimate knowledge of domain-specific requirements</li>
+                        <li><strong>Clear Ownership</strong>: Teams take pride in their areas of responsibility</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-lg mb-4 revio-blue">New Development Focus</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Isolated Innovation</strong>: New development areas (like SLAs) assigned to specific pods</li>
+                        <li><strong>Existing Enhancement</strong>: Features enhancing existing functionality (ticketing, quoting, workflows) assigned to domain expert pods</li>
+                        <li><strong>Balanced Workload</strong>: Each pod has at most one area of brand-new development</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-10">
+                <h3 class="text-xl font-semibold mb-4 revio-blue text-center">Specialized Pod Teams</h3>
+                
+                <!-- Core Platform & Infrastructure -->
+                <h4 class="text-lg font-semibold mt-8 mb-4 text-gray-700">Core Platform & Infrastructure</h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="pod-card">
+                        <div class="pod-header"><i class="fas fa-cogs"></i> Enterprise Team</div>
+                        <div class="pod-body">
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Engineering Lead</div>
+                                <div class="pod-role-name">John Robinson</div>
+                            </div>
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Software Engineers</div>
+                                <div class="pod-role-name">Alan Sellers, Matt Staples, Contractor, Contractor</div>
+                            </div>
+                            <div class="pod-accountabilities">
+                                <div class="pod-accountabilities-title">Team Accountabilities:</div>
+                                <div class="accountability-item">• AI Coding Standards</div>
+                                <div class="accountability-item">• Infrastructure and Tooling Provisioning</div>
+                                <div class="accountability-item">• AI Workflow Integration</div>
+                                <div class="accountability-item">• Governance and Compliance</div>
+                                <div class="accountability-item">• Monitoring and Optimization</div>
+                                <div class="accountability-item">• Support and Enablement</div>
+                                <div class="accountability-item new">• User Management</div>
+                                <div class="accountability-item">• Authentication/SSO</div>
+                                <div class="accountability-item new">• License Management Module</div>
+                                <div class="accountability-item new">• Audit Logging</div>
+                                <div class="accountability-item new">• Bulk import/update/export actions</div>
+                                <div class="accountability-item new">• Commercial API</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pod-card">
+                        <div class="pod-header"><i class="fas fa-link"></i> Integrations</div>
+                        <div class="pod-body">
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Engineering Lead</div>
+                                <div class="pod-role-name">Juba Jackson</div>
+                            </div>
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Software Engineers</div>
+                                <div class="pod-role-name">Aaron Cahill, Andy Birt, Jacob Stricherz, Contractor, Contractor</div>
+                            </div>
+                            <div class="pod-accountabilities">
+                                <div class="pod-accountabilities-title">Team Accountabilities:</div>
+                                <div class="accountability-item">• Sync Engine</div>
+                                <div class="accountability-item">• API Gateway/Rate Limiting</div>
+                                <div class="accountability-item">• Connectors</div>
+                                <div class="accountability-item">• OpenAPI</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pod-card">
+                        <div class="pod-header"><i class="fas fa-chart-bar"></i> Data & Analytics</div>
+                        <div class="pod-body">
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Engineering Lead</div>
+                                <div class="pod-role-name">Matt Hills</div>
+                            </div>
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Software Engineers</div>
+                                <div class="pod-role-name">Matt Villarreal, Colin Fitzgerald</div>
+                            </div>
+                            <div class="pod-accountabilities">
+                                <div class="pod-accountabilities-title">Team Accountabilities:</div>
+                                <div class="accountability-item">• Power BI Reporting</div>
+                                <div class="accountability-item">• Data Architecture SME</div>
+                                <div class="accountability-item">• Tier 2 Queue</div>
+                                <div class="accountability-item">• Embedded Reporting</div>
+                                <div class="accountability-item">• Internal Reporting</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Customer-Facing Operations -->
+                <h4 class="text-lg font-semibold mt-8 mb-4 text-gray-700">Customer-Facing Operations</h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="pod-card">
+                        <div class="pod-header"><i class="fas fa-users"></i> Customer Excellence<span class="new-team-badge">NEW</span></div>
+                        <div class="pod-body">
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Engineering Lead</div>
+                                <div class="pod-role-name">Josh McPherson</div>
+                            </div>
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Software Engineers</div>
+                                <div class="pod-role-name">Dakota Gunnels, Jon Glenn</div>
+                            </div>
+                            <div class="pod-accountabilities">
+                                <div class="pod-accountabilities-title">Team Accountabilities:</div>
+                                <div class="accountability-item">• Customer Management</div>
+                                <div class="accountability-item">• Customer Portal</div>
+                                <div class="accountability-item">• Community & Gamification</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pod-card">
+                        <div class="pod-header"><i class="fas fa-clipboard-list"></i> Service Operations</div>
+                        <div class="pod-body">
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Engineering Lead</div>
+                                <div class="pod-role-name">Radhika Ramamoorthy</div>
+                            </div>
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Software Engineers</div>
+                                <div class="pod-role-name">Marsha Blobaum, Contractor</div>
+                            </div>
+                            <div class="pod-accountabilities">
+                                <div class="pod-accountabilities-title">Team Accountabilities:</div>
+                                <div class="accountability-item new">• Scheduling & Dispatch Board</div>
+                                <div class="accountability-item">• Ticketing</div>
+                                <div class="accountability-item">• SLAs</div>
+                                <div class="accountability-item">• Time Management</div>
+                                <div class="accountability-item">• Orders</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pod-card">
+                        <div class="pod-header"><i class="fas fa-route"></i> Experience & Automation</div>
+                        <div class="pod-body">
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Engineering Lead</div>
+                                <div class="pod-role-name">Ian Schuster</div>
+                            </div>
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Software Engineers</div>
+                                <div class="pod-role-name">Joe Jonaitis, Whitney Yates, Contractor</div>
+                            </div>
+                            <div class="pod-accountabilities">
+                                <div class="pod-accountabilities-title">Team Accountabilities:</div>
+                                <div class="accountability-item new">• Workflows & Notifications</div>
+                                <div class="accountability-item">• Communication services</div>
+                                <div class="accountability-item">• In App Notification</div>
+                                <div class="accountability-item new">• Advanced List View Functionality Matrix</div>
+                                <div class="accountability-item">• Self Service Onboarding</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pod-card">
+                        <div class="pod-header"><i class="fas fa-mobile-alt"></i> Mobile<span class="new-team-badge">NEW</span></div>
+                        <div class="pod-body">
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Engineering Lead</div>
+                                <div class="pod-role-name">Sean Howren (08/19)</div>
+                            </div>
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Software Engineers</div>
+                                <div class="pod-role-name">Jodi Mulroy, Contractor</div>
+                            </div>
+                            <div class="pod-accountabilities">
+                                <div class="pod-accountabilities-title">Team Accountabilities:</div>
+                                <div class="accountability-item">• Mobile Application</div>
+                                <div class="accountability-item">• Legacy FSA App</div>
+                                <div class="accountability-item">• Legacy TigerPaw Mobile</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Revenue & Commerce -->
+                <h4 class="text-lg font-semibold mt-8 mb-4 text-gray-700">Revenue & Commerce</h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="pod-card">
+                        <div class="pod-header"><i class="fas fa-chart-line"></i> Revenue Operations</div>
+                        <div class="pod-body">
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Engineering Lead</div>
+                                <div class="pod-role-name">Marc Barbier</div>
+                            </div>
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Software Engineers</div>
+                                <div class="pod-role-name">Steven Dixon, Kenyatta Terry</div>
+                            </div>
+                            <div class="pod-accountabilities">
+                                <div class="pod-accountabilities-title">Team Accountabilities:</div>
+                                <div class="accountability-item">• Quoting</div>
+                                <div class="accountability-item">• Basic Sales Opp Management</div>
+                                <div class="accountability-item new">• Product Catalog</div>
+                                <div class="accountability-item new">• Agent/Commissions</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pod-card">
+                        <div class="pod-header"><i class="fas fa-file-invoice-dollar"></i> Billing & Finance</div>
+                        <div class="pod-body">
+                            <div class="pod-role">
+                                <div class="pod-role-title">Distinguished AI Engineering Lead</div>
+                                <div class="pod-role-name">Jordan Parker</div>
+                            </div>
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Software Engineers</div>
+                                <div class="pod-role-name">Dennis Bamber, Contractor, Contractor</div>
+                            </div>
+                            <div class="pod-accountabilities">
+                                <div class="pod-accountabilities-title">Team Accountabilities:</div>
+                                <div class="accountability-item">• Recurring Service (Moved from Service Delivery)</div>
+                                <div class="accountability-item">• Invoicing and Billing</div>
+                                <div class="accountability-item">• Taxes/Tex</div>
+                                <div class="accountability-item">• Metered Usage</div>
+                                <div class="accountability-item">• Collections</div>
+                                <div class="accountability-item">• Virtual CFO</div>
+                                <div class="accountability-item">• Number Management (New - Spin off from Inventory)</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pod-card">
+                        <div class="pod-header"><i class="fas fa-store"></i> Commerce Hub<span class="new-team-badge">NEW</span></div>
+                        <div class="pod-body">
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Engineering Lead</div>
+                                <div class="pod-role-name">Zach Tata</div>
+                            </div>
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Software Engineers</div>
+                                <div class="pod-role-name">Olek Hrabrovskyy, Contractor</div>
+                            </div>
+                            <div class="pod-accountabilities">
+                                <div class="pod-accountabilities-title">Team Accountabilities:</div>
+                                <div class="accountability-item">• Commerce Hub</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pod-card">
+                        <div class="pod-header"><i class="fas fa-boxes"></i> Assets & Inventory</div>
+                        <div class="pod-body">
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Engineering Lead</div>
+                            </div>
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Software Engineers</div>
+                            </div>
+                            <div class="pod-accountabilities">
+                                <div class="pod-accountabilities-title">Team Accountabilities:</div>
+                                <div class="accountability-item">• Purchasing</div>
+                                <div class="accountability-item">• Inventory Management</div>
+                                <div class="accountability-item">• Customer Assets</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pod-card">
+                        <div class="pod-header"><i class="fas fa-credit-card"></i> Payments<span class="new-team-badge">NEW</span></div>
+                        <div class="pod-body">
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Engineering Lead</div>
+                                <div class="pod-role-name">Vin Gleespen</div>
+                            </div>
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Software Engineers</div>
+                                <div class="pod-role-name">Toni Bennet, Bridget Brevik</div>
+                            </div>
+                            <div class="pod-accountabilities">
+                                <div class="pod-accountabilities-title">Team Accountabilities:</div>
+                                <div class="accountability-item">• Merchant Services</div>
+                                <div class="accountability-item">• Enterprise Payments</div>
+                                <div class="accountability-item">• Accounts Payable (Moved from Finance and Billing Team)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Operational Support -->
+                <h4 class="text-lg font-semibold mt-8 mb-4 text-gray-700">Operational Support</h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="pod-card">
+                        <div class="pod-header"><i class="fas fa-puzzle-piece"></i> Partner Platform<span class="new-team-badge">NEW</span></div>
+                        <div class="pod-body">
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Engineering Lead</div>
+                                <div class="pod-role-name">Jared Keirns</div>
+                            </div>
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Software Engineers</div>
+                                <div class="pod-role-name">Julian Buettgenback, Dave Harris, Contractor</div>
+                            </div>
+                            <div class="pod-accountabilities">
+                                <div class="pod-accountabilities-title">Team Accountabilities:</div>
+                                <div class="accountability-item">• Reseller/BoB</div>
+                                <div class="accountability-item">• PSA Developer Portal</div>
+                                <div class="accountability-item">• Data migrations</div>
+                                <div class="accountability-item">• The Stage</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pod-card">
+                        <div class="pod-header"><i class="fas fa-file-invoice"></i> Billing Support</div>
+                        <div class="pod-body">
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Engineering Lead</div>
+                                <div class="pod-role-name">Seth Fields</div>
+                            </div>
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Software Engineers</div>
+                                <div class="pod-role-name">Tyler Hamilton, Ryan Downs, Emine Sirma</div>
+                            </div>
+                            <div class="pod-accountabilities">
+                                <div class="pod-accountabilities-title">Team Accountabilities:</div>
+                                <div class="accountability-item">• Rev.io Billing platform maintenance</div>
+                                <div class="accountability-item">• Feature enhancements and updates</div>
+                                <div class="accountability-item">• Integration support with PSA systems</div>
+                                <div class="accountability-item">• System stability and performance</div>
+                                <div class="accountability-item">• Customer billing issue resolution</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pod-card">
+                        <div class="pod-header"><i class="fas fa-brain"></i> AI & Intelligence</div>
+                        <div class="pod-body">
+                            <div class="pod-role">
+                                <div class="pod-role-title">Data Scientist</div>
+                                <div class="pod-role-name">Robert Hoekstra</div>
+                            </div>
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Software Engineers</div>
+                                <div class="pod-role-name">Anand Somalraju, Premlatha Purushotham</div>
+                            </div>
+                            <div class="pod-accountabilities">
+                                <div class="pod-accountabilities-title">Team Accountabilities:</div>
+                                <div class="accountability-item">• AI Foundations & Analytics</div>
+                                <div class="accountability-item">• Ask Rev.ii</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pod-card">
+                        <div class="pod-header"><i class="fas fa-cloud"></i> Cloud Infrastructure</div>
+                        <div class="pod-body">
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Engineering Lead</div>
+                                <div class="pod-role-name">Mikel Hulsey</div>
+                            </div>
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Software Engineers</div>
+                                <div class="pod-role-name">Dakota Kupsky, Aaron Taylor</div>
+                            </div>
+                            <div class="pod-accountabilities">
+                                <div class="pod-accountabilities-title">Team Accountabilities:</div>
+                                <div class="accountability-item">• Cloud architecture design and implementation</div>
+                                <div class="accountability-item">• Infrastructure as Code (IaC) development</div>
+                                <div class="accountability-item">• Cloud resource provisioning and automation</div>
+                                <div class="accountability-item">• Security and compliance framework implementation</div>
+                                <div class="accountability-item">• Disaster recovery and backup strategies</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pod-card">
+                        <div class="pod-header"><i class="fas fa-server"></i> Cloud Operations</div>
+                        <div class="pod-body">
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Engineering Lead</div>
+                                <div class="pod-role-name">Paul Glozeris</div>
+                            </div>
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Software Engineers</div>
+                                <div class="pod-role-name">Michael McKernan, Pete Dennis</div>
+                            </div>
+                            <div class="pod-accountabilities">
+                                <div class="pod-accountabilities-title">Team Accountabilities:</div>
+                                <div class="accountability-item">• 24/7 cloud infrastructure monitoring</div>
+                                <div class="accountability-item">• Performance optimization and tuning</div>
+                                <div class="accountability-item">• Incident response and troubleshooting</div>
+                                <div class="accountability-item">• Cost optimization and resource management</div>
+                                <div class="accountability-item">• Patch management and security updates</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pod-card">
+                        <div class="pod-header"><i class="fas fa-project-diagram"></i> Architecture</div>
+                        <div class="pod-body">
+                            <div class="pod-role">
+                                <div class="pod-role-title">Software Architect</div>
+                                <div class="pod-role-name">Bill Campbell</div>
+                            </div>
+                            <div class="pod-role">
+                                <div class="pod-role-title">Cloud Architect</div>
+                                <div class="pod-role-name">Geoff Getter</div>
+                            </div>
+                            <div class="pod-accountabilities">
+                                <div class="pod-accountabilities-title">Team Accountabilities:</div>
+                                <div class="accountability-item">• Enterprise architecture strategy and governance</div>
+                                <div class="accountability-item">• Technology stack evaluation and selection</div>
+                                <div class="accountability-item">• Solution design and technical blueprints</div>
+                                <div class="accountability-item">• Integration patterns and API standards</div>
+                                <div class="accountability-item">• Technical debt assessment and remediation</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pod-card">
+                        <div class="pod-header"><i class="fas fa-database"></i> Database Administration</div>
+                        <div class="pod-body">
+                            <div class="pod-role">
+                                <div class="pod-role-title">Database Administrators</div>
+                                <div class="pod-role-name">Ken Fisher, Justina Zubairu</div>
+                            </div>
+                            <div class="pod-accountabilities">
+                                <div class="pod-accountabilities-title">Team Accountabilities:</div>
+                                <div class="accountability-item">• Database design and optimization</div>
+                                <div class="accountability-item">• Data integrity and security management</div>
+                                <div class="accountability-item">• Backup and recovery procedures</div>
+                                <div class="accountability-item">• Performance monitoring and tuning</div>
+                                <div class="accountability-item">• Database migration and upgrades</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pod-card">
+                        <div class="pod-header"><i class="fas fa-tools"></i> Legacy Systems</div>
+                        <div class="pod-body">
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Engineering Lead</div>
+                                <div class="pod-role-name">Harley Wilkins</div>
+                            </div>
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Software Engineers</div>
+                                <div class="pod-role-name">Dan Shaffer, Darnell Powers, Steve Lee</div>
+                            </div>
+                            <div class="pod-accountabilities">
+                                <div class="pod-accountabilities-title">Team Accountabilities:</div>
+                                <div class="accountability-item">• Odin Feature Development</div>
+                                <div class="accountability-item">• Odin Maintenance</div>
+                                <div class="accountability-item">• TBS Maintenance</div>
+                                <div class="accountability-item">• Tigerpaw Support</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pod-card">
+                        <div class="pod-header understaffed"><span class="team-name"><i class="fas fa-shield-alt"></i> Security/Compliance</span></div>
+                        <div class="pod-body">
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Engineering Lead</div>
+                                <div class="pod-role-name">TBD</div>
+                            </div>
+                            <div class="pod-role">
+                                <div class="pod-role-title">AI Software Engineers</div>
+                                <div class="pod-role-name">TBD</div>
+                            </div>
+                            <div class="pod-accountabilities">
+                                <div class="pod-accountabilities-title">Team Accountabilities:</div>
+                                <div class="accountability-item">• Security policy implementation and enforcement</div>
+                                <div class="accountability-item">• Compliance monitoring (SOC2, GDPR, CCPA)</div>
+                                <div class="accountability-item">• Security audits and vulnerability assessments</div>
+                                <div class="accountability-item">• Data privacy and protection</div>
+                                <div class="accountability-item">• Incident response and threat management</div>
+                                <div class="accountability-item">• Security awareness training</div>
+                                <div class="accountability-item">• Third-party vendor security assessments</div>
+                                <div class="accountability-item">• Regulatory compliance reporting</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contractor Summary -->
+        <div class="slide">
+            <div class="header-block">
+                Contractor Summary
+            </div>
+            
+            <div class="mb-8">
+                <p class="text-lg mb-6">
+                    Overview of contractor resources allocated across all teams in the new organizational structure.
+                </p>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr>
+                            <th>Team</th>
+                            <th>Number of Contractors</th>
+                            <th>Role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Enterprise Team</td>
+                            <td>2</td>
+                            <td>AI Software Engineers</td>
+                        </tr>
+                        <tr>
+                            <td>Integrations</td>
+                            <td>2</td>
+                            <td>AI Software Engineers</td>
+                        </tr>
+                        <tr>
+                            <td>Customer Excellence</td>
+                            <td>0</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Service Operations</td>
+                            <td>1</td>
+                            <td>AI Software Engineers</td>
+                        </tr>
+                        <tr>
+                            <td>Experience & Automation</td>
+                            <td>1</td>
+                            <td>AI Software Engineers</td>
+                        </tr>
+                        <tr>
+                            <td>Mobile</td>
+                            <td>1</td>
+                            <td>AI Software Engineers</td>
+                        </tr>
+                        <tr>
+                            <td>Revenue Operations</td>
+                            <td>0</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Billing & Finance</td>
+                            <td>2</td>
+                            <td>AI Software Engineers</td>
+                        </tr>
+                        <tr>
+                            <td>Commerce Hub</td>
+                            <td>1</td>
+                            <td>AI Software Engineers</td>
+                        </tr>
+                        <tr>
+                            <td>Partner Platform</td>
+                            <td>1</td>
+                            <td>AI Software Engineers</td>
+                        </tr>
+                        <tr class="font-semibold bg-gray-50">
+                            <td>Total Contractors</td>
+                            <td>11</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="mt-8 bg-gray-50 p-6 rounded-lg">
+                <h3 class="font-semibold text-xl mb-4 revio-blue">Key Insights</h3>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Total of <strong>11 contractors</strong> distributed across 8 teams</li>
+                    <li>Enterprise and Integrations have the most contractors (2 each)</li>
+                    <li>Billing & Finance also has 2 contractors</li>
+                    <li>Customer Excellence and Revenue Operations have no contractors</li>
+                    <li>All contractors serve as AI Software Engineers</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- AI Committee -->
+        <div class="slide">
+            <div class="header-block">
+                AI Committee - Governance Board
+            </div>
+            
+            <div class="mb-8">
+                <p class="text-lg mb-6">
+                    The AI Committee serves as the governance board for all AI initiatives, ensuring ethical implementation, strategic alignment, and risk management across the organization.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="card">
+                    <h3 class="card-title">Committee Responsibilities</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>AI strategy and roadmap approval</li>
+                        <li>Ethical AI guidelines and policies</li>
+                        <li>AI investment prioritization</li>
+                        <li>Risk assessment and mitigation</li>
+                        <li>Compliance with AI regulations</li>
+                        <li>Model governance and oversight</li>
+                        <li>Data privacy and security standards</li>
+                        <li>AI performance metrics and KPIs</li>
+                        <li>Cross-functional AI coordination</li>
+                        <li>Vendor and tool evaluation</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">Committee Structure</h3>
+                    <div class="mb-4">
+                        <h4 class="font-semibold mb-2">Executive Members:</h4>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li>CEO (Committee Chair)</li>
+                            <li>CTO</li>
+                            <li>VP of Product Strategy</li>
+                            <li>VP of AI Engineering</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold mb-2">Technical Members:</h4>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li>AI & Intelligence Team Lead</li>
+                            <li>Enterprise Team Lead</li>
+                            <li>Data & Analytics Team Lead</li>
+                            <li>Security/Compliance Representative</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-2">Meeting Cadence:</h4>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li>Monthly governance reviews</li>
+                            <li>Quarterly strategic planning</li>
+                            <li>Ad-hoc for critical decisions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="font-semibold text-xl mb-4 revio-blue">Key Focus Areas</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="text-3xl text-revio-blue mb-2">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2">Ethical AI</h4>
+                        <p class="text-sm">Ensure responsible AI deployment with bias prevention and transparency</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="text-3xl text-revio-teal mb-2">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2">Risk Management</h4>
+                        <p class="text-sm">Identify and mitigate AI-related risks including security and compliance</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="text-3xl text-revio-blue mb-2">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2">Performance Metrics</h4>
+                        <p class="text-sm">Track AI ROI, productivity gains, and business impact</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Workflow and Process -->
+        <div class="slide">
+            <div class="header-block">
+                Workflow and Process
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-4 revio-blue">Feature Flow</h3>
+            </div>
+            
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold mb-1">Product Managers create epics and features</h4>
+                        <p>Clear requirements with Figma mockups and acceptance criteria</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold mb-1">Features assigned to pods based on domain expertise</h4>
+                        <p>Product Managers route work to the appropriate domain expert pod</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold mb-1">AI Engineering Lead clarifies requirements</h4>
+                        <p>Reviews acceptance criteria and resolves any ambiguities</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold mb-1">Pod members claim features</h4>
+                        <p>Orchestrators deploy agent networks for feature implementation</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">5</div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold mb-1">Engineers orchestrate autonomous development networks</h4>
+                        <p>Agents independently implement features while spawning specialized sub-agents</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">6</div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold mb-1">AI Engineering Lead validates agent-generated solutions</h4>
+                        <p>Orchestrates comprehensive review through specialized agent networks</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">7</div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold mb-1">Product Manager verifies acceptance criteria</h4>
+                        <p>Final approval authority for production release</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">8</div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold mb-1">Feature ships (potentially same day)</h4>
+                        <p>No external dependencies or approval gates outside the pod</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-10">
+                <h3 class="text-xl font-semibold mb-4 revio-blue">Communication Cadence</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="card text-center">
+                        <div class="text-3xl mb-2 text-revio-blue">
+                            <i class="fas fa-calendar-day"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2">Daily</h4>
+                        <p>Pod internal sync<br>(15 min)</p>
+                    </div>
+                    
+                    <div class="card text-center">
+                        <div class="text-3xl mb-2 text-revio-blue">
+                            <i class="fas fa-calendar-week"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2">Weekly</h4>
+                        <p>Pod Lead <-> Product Manager sync</p>
+                    </div>
+                    
+                    <div class="card text-center">
+                        <div class="text-3xl mb-2 text-revio-blue">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2">Bi-weekly</h4>
+                        <p>Engineering Manager one-on-ones</p>
+                    </div>
+                    
+                    <div class="card text-center">
+                        <div class="text-3xl mb-2 text-revio-blue">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2">Monthly</h4>
+                        <p>Cross-pod knowledge sharing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Rapid Implementation Plan -->
+        <div class="slide">
+            <div class="header-block">
+                Rapid Implementation Plan
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-4 revio-blue">1-2 Week Deployment</h3>
+                <p class="mb-4">
+                    This transformation can be implemented rapidly, allowing Rev.io to begin seeing benefits within days.
+                </p>
+            </div>
+            
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold mb-2">Days 1-2: Leadership Alignment & Communication</h4>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li><strong>Executive Decision</strong>: Lock in pod structure with Executive Team</li>
+                            <li><strong>All-Hands Meeting</strong>: Announce transformation and timeline</li>
+                            <li><strong>Role Definitions</strong>: Finalize AI Engineering Lead job descriptions</li>
+                            <li><strong>Agent Platform Access</strong>: Ensure all engineers have access to agent orchestration platforms</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold mb-2">Days 3-4: Team Reformation</h4>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li><strong>Product Manager Transition</strong>: Establish Product Manager layer</li>
+                            <li><strong>Pod Formation</strong>: Break existing teams into pods</li>
+                            <li><strong>Domain Assignment</strong>: Each pod gets primary domains</li>
+                            <li><strong>QA/DevOps Transition</strong>: Reassign to new roles</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold mb-2">Days 5-7: Operational Readiness</h4>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li><strong>Orchestration Training</strong>: Intensive training on agent deployment and network management</li>
+                            <li><strong>Workflow Documentation</strong>: Define feature handoff process</li>
+                            <li><strong>First Features</strong>: Assign simple features to pilot pods</li>
+                            <li><strong>Success Metrics</strong>: Establish baseline measurements</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4 class="font-semibold mb-2">Week 2: Full Operations</h4>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li><strong>All Pods Active</strong>: Every pod working on real features</li>
+                            <li><strong>Daily Check-ins</strong>: Quick wins and blockers</li>
+                            <li><strong>Process Refinement</strong>: Adjust based on immediate feedback</li>
+                            <li><strong>Measure Impact</strong>: Track feature completion velocity</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Success Metrics -->
+        <div class="slide">
+            <div class="header-block">
+                Success Metrics
+            </div>
+            
+            <div class="mb-8">
+                <p class="text-lg mb-6">
+                    We'll measure success through quantifiable improvements in development velocity, quality, and team capabilities.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 revio-blue">Pod Level</h3>
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <ul class="list-disc pl-6 space-y-3">
+                            <li><strong>Features completed per week</strong>: Tracking velocity improvements</li>
+                            <li><strong>Cycle time</strong>: Feature assignment to production</li>
+                            <li><strong>Agent network sophistication</strong>: Measuring depth and autonomy of deployed networks</li>
+                            <li><strong>Orchestration mastery</strong>: Evolution from users to conductors of agent symphonies</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 revio-blue">Organizational Level</h3>
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <ul class="list-disc pl-6 space-y-3">
+                            <li><strong>Overall feature velocity</strong>: Total features shipped</li>
+                            <li><strong>Customer satisfaction scores</strong>: Impact on end-users</li>
+                            <li><strong>Time to market</strong>: Speed of new capabilities</li>
+                            <li><strong>Cross-pod collaboration effectiveness</strong>: Knowledge sharing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="font-semibold text-xl mb-6 revio-blue text-center">Orchestration Impact: Redefining Possible</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="metrics-card">
+                        <div class="metric-number">10x</div>
+                        <div class="metric-label">Baseline Productivity<br>Per Orchestrator</div>
+                        <p class="text-xs text-gray-600 mt-2">Conservative estimate - actual impact likely exponential</p>
+                    </div>
+                    
+                    <div class="metrics-card">
+                        <div class="metric-number">Hours</div>
+                        <div class="metric-label">Feature Delivery<br>Not Days or Sprints</div>
+                        <p class="text-xs text-gray-600 mt-2">Autonomous agents work 24/7</p>
+                    </div>
+                    
+                    <div class="metrics-card">
+                        <div class="metric-number">∞</div>
+                        <div class="metric-label">Scalability Through<br>Agent Networks</div>
+                        <p class="text-xs text-gray-600 mt-2">Limited only by orchestration sophistication</p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <p class="text-lg font-semibold mb-4">
+                        By 2026, Rev.io commits to delivering <span class="text-2xl text-revio-teal">10x</span> the value of traditional development teams.
+                    </p>
+                    <p class="text-gray-700">
+                        This represents our commitment to transformative change.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Investment and Transition Realities -->
+        <div class="slide">
+            <div class="header-block">
+                Implementation Realities
+            </div>
+            
+            <div class="mb-8">
+                <p class="text-lg mb-6">
+                    Executive leadership is driving this transformation with urgency. Here's how we measure success and navigate the human impact.
+                </p>
+            </div>
+            
+            <div class="card mb-8">
+                <h3 class="card-title">Measuring ROI</h3>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Feature Velocity</strong>: Track features shipped per orchestrator per week</li>
+                    <li><strong>Time to Market</strong>: Measure idea to production in hours/days</li>
+                    <li><strong>Revenue per Engineer</strong>: Direct correlation to business value</li>
+                    <li><strong>Customer Acquisition</strong>: Speed of new capability delivery</li>
+                    <li><strong>Market Share Growth</strong>: Competitive advantage metrics</li>
+                </ul>
+                <div class="mt-4 p-3 bg-green-50 rounded">
+                    <p class="text-sm font-semibold">Target: 10x productivity = Exponential value creation from Day 1</p>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg mb-8">
+                <h3 class="font-semibold text-xl mb-4 revio-blue">Realistic Timeline: The Human Factor</h3>
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">0-2</div>
+                        <div class="timeline-content">
+                            <h4 class="font-semibold mb-1">Weeks 0-2: Formation & Friction</h4>
+                            <p>Teams reform, initial resistance, learning curve steep. Productivity temporarily drops as engineers adapt to orchestration mindset.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">3-4</div>
+                        <div class="timeline-content">
+                            <h4 class="font-semibold mb-1">Weeks 3-4: First Breakthroughs</h4>
+                            <p>Early adopters achieve first autonomous feature delivery. Success stories emerge. Skeptics begin to see potential.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">5-8</div>
+                        <div class="timeline-content">
+                            <h4 class="font-semibold mb-1">Weeks 5-8: Acceleration</h4>
+                            <p>Teams hit stride. Agent networks become sophisticated. Productivity surpasses traditional development.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">9-12</div>
+                        <div class="timeline-content">
+                            <h4 class="font-semibold mb-1">Weeks 9-12: Exponential Growth</h4>
+                            <p>Full orchestration mastery. Features that took weeks now take hours. 10x productivity becomes reality.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-blue-50 p-6 rounded-lg">
+                <h3 class="font-semibold text-xl mb-4 text-blue-800">Workforce Evolution Strategy</h3>
+                <div class="mb-6">
+                    <p class="text-lg mb-4">
+                        Our comprehensive approach ensures every team member has the opportunity to thrive in the AI-driven future.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold mb-3">Role Evolution Pathways</h4>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li><strong>QA Engineers</strong>: Become quality orchestrators with AI validation expertise</li>
+                            <li><strong>Manual Testers</strong>: Transform into user experience validators</li>
+                            <li><strong>Junior Developers</strong>: Fast-track to AI orchestration through mentorship</li>
+                            <li><strong>Maintenance Engineers</strong>: Evolve into system optimization specialists</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-3">Comprehensive Support System</h4>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li><strong>Personalized Development Plans</strong>: Tailored growth paths for each role</li>
+                            <li><strong>AI Orchestration Academy</strong>: World-class training program</li>
+                            <li><strong>Mentorship Networks</strong>: Peer-to-peer learning communities</li>
+                            <li><strong>Innovation Time</strong>: 20% dedicated to skill development</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-6 p-4 bg-white rounded">
+                    <p class="text-center">
+                        <strong>Investment in Our People:</strong> $2M allocated for comprehensive training and development programs to ensure 
+                        our entire workforce successfully transitions to AI-powered roles.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="bg-blue-50 p-6 rounded-lg mt-6">
+                <h3 class="font-semibold text-xl mb-4 text-blue-800">Transition Team</h3>
+                <div class="mb-6">
+                    <p class="text-lg mb-4">
+                        A dedicated team focused on enabling every team member to successfully transition to AI-orchestrated development.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-4 rounded mb-4">
+                    <div class="font-semibold text-lg mb-2">Team Lead</div>
+                    <p class="text-gray-600">Champion for successful workforce transformation and skill development</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold mb-3">Key Responsibilities</h4>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li>Design comprehensive AI orchestration curriculum</li>
+                            <li>Create hands-on learning environments</li>
+                            <li>Match team members with AI tools that complement their strengths</li>
+                            <li>Build confidence through guided practice</li>
+                            <li>Celebrate early wins and learning milestones</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-3">Success Programs</h4>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li><strong>AI Pair Programming</strong>: Learn by doing with experienced orchestrators</li>
+                            <li><strong>Innovation Labs</strong>: Safe spaces to experiment with AI tools</li>
+                            <li><strong>Skill Bridges</strong>: Connect existing expertise to new AI capabilities</li>
+                            <li><strong>Success Stories</strong>: Share and learn from peer transformations</li>
+                            <li><strong>Growth Tracking</strong>: Measure and celebrate progress</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Conclusion -->
+        <div class="slide">
+            <div class="header-block">
+                Conclusion
+            </div>
+            
+            <div class="mb-8">
+                <p class="text-lg mb-6">
+                    This model positions Rev.io at the forefront of a development revolution. By transforming our engineers into 
+                    orchestrators of exponential agent networks, we're not just improving productivity - we're redefining what's 
+                    possible in software development. While competitors struggle with linear improvements, we're unleashing exponential growth.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-xl mb-4 revio-blue">Why This Model Wins</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Speed</strong>: Features delivered in days, not sprints</li>
+                        <li><strong>Quality</strong>: Self-improving agent networks ensure excellence</li>
+                        <li><strong>Scalability</strong>: More output with the same headcount</li>
+                        <li><strong>Innovation</strong>: Engineers focus on orchestration, not implementation</li>
+                        <li><strong>Expertise</strong>: Preserve and enhance domain knowledge</li>
+                        <li><strong>Autonomy</strong>: Self-sufficient pods without external dependencies</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-xl mb-4 revio-blue">Next Steps</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Executive Approval</strong>: Secure buy-in for organizational model</li>
+                        <li><strong>HR Preparation</strong>: Update role descriptions and org charts</li>
+                        <li><strong>Platform Setup</strong>: Deploy agent orchestration infrastructure</li>
+                        <li><strong>Orchestration Training</strong>: Transform engineers into conductors</li>
+                        <li><strong>Communication Plan</strong>: Develop rollout messaging</li>
+                        <li><strong>Pilot Selection</strong>: Identify 2-3 pods for initial implementation</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-10 text-center">
+                <div class="inline-block bg-revio-teal text-white py-4 px-8 rounded-lg text-xl font-semibold mb-4">
+                    From Engineers to Orchestrators. From Linear to Exponential.
+                </div>
+                <p class="text-lg text-gray-700 mt-4">
+                    While our competitors hire more engineers, we're creating something fundamentally different:<br>
+                    <span class="font-semibold">A symphony of autonomous agents, conducted by master orchestrators.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"967996e4efb6827a","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.7.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDoT2wE%2FytlVS1KyGTd30rT2uRyXWLsMVtyq4gQmALNHbeBjl%2FETOr6NZTH1jT9Dd9%2FAZj%2F4v0Qkc3txqwzvZeJ%2BflPX%2BYwrLfdKmeYAFr56tj7CsJ5MlHZvK26MzB3Ct6sV5nKQIK%2BS7qDIr%2FecCATtqAWZgc7Fh4f5MGijRFybuWIGb%2F6EWp7AG77T4PmDJygz4Th%2FaJlulczCFV3yNEYqf3Q9W4aWWZkE4OR8Cgnd9B4NnanojgYEdy5IlNuoW0aFJnBSLpEwacsYYPiyAfx8LRHpAIYpGHRk%2F51WuggfPhN6Nr4u2AKYQv0cF%2BW5p5qBaFXvhHQ8OkSMhIC6Ga8%2FgiObjuh%2BSFYHEPTJ%2Bn3ZNASnEty6YFxDcOxt65aoJEkhp7ZR4Pq1hxOTldEzcjxBxrO01%2FYbr1pEdk6ARf9eINDrEttN9mRzmXTEwwJqZLvYm2cipOhvAxJ7NJ5JEYfcAM3vSoqKSD9VeUq5EifeMEJEMqaIqHtJGA4Su%2BpAXBRvUoLuvJ9wiJauQ0VQsjQs%3D";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDoT2wE/ytlVS1KyGTd30rT2uRyXWLsMVtyq4gQmALNHbeBjl/ETOr6NZTH1jT9Dd9/AZj/4v0Qkc3txqwzvZeJ+flPX+YwrLfdKmeYAFr56tj7CsJ5MlHZvK26MzB3Ct6sV5nKQIK+S7qDIr/ecCATtqAWZgc7Fh4f5MGijRFybuWIGb/6EWp7AG77T4PmDJygz4Th/aJlulczCFV3yNEYqf3Q9W4aWWZkE4OR8Cgnd9B4NnanojgYEdy5IlNuoW0aFJnBSLpEwacsYYPiyAfx8LRHpAIYpGHRk/51WuggfPhN6Nr4u2AKYQv0cF+W5p5qBaFXvhHQ8OkSMhIC6Ga8/giObjuh+SFYHEPTJ+n3ZNASnEty6YFxDcOxt65aoJEkhp7ZR4Pq1hxOTldEzcjxBxrO01/Ybr1pEdk6ARf9eINDrEttN9mRzmXTEwwJqZLvYm2cipOhvAxJ7NJ5JEYfcAM3vSoqKSD9VeUq5EifeMEJEMqaIqHtJGA4Su+pAXBRvUoLuvJ9wiJauQ0VQsjQs=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
